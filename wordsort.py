@@ -11,8 +11,9 @@ inputWord = ['막', '부모님', '비용', '비행기', '원래', '처리', '최
 
 
 result = []
-for j in range(int(ord('ㅎ') - ord('ㄱ')-1/2+1)):
-    result.append([i for i in inputWord if ord(dicBase[j][0]) < ord(i[0]) < ord(dicBase[j][1]) ])
+
+for j in range(int((ord('ㅎ') - ord('ㄱ')-1)/2)):
+    result.append([i for i in inputWord if ord(dicBase[j][0]) <= ord(i[0]) <= ord(dicBase[j][1]) ])
 
 print(result)
 

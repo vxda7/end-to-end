@@ -1,14 +1,6 @@
+def ssafy(name, location = '서울'):
+    print(f'{name}의 지역은 {location}입니다.')
 
-score=[85, 65, 77, 83, 75, 22, 98, 88, 38, 100]
-sum=0
-pp=0
-i=0
-lo=len(score)
+ssafy(location = '대전', name = '철수')
 
-while i<lo:
-    i=i+1
-    pp=score.pop()
-    if pp>=80:
-        sum+=pp
-        
-print(sum)
+ssafy(name = '허준', '구미')
