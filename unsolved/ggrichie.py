@@ -1,27 +1,27 @@
-get = int(input())
-result=[]
+# get = int(input())
+# result=[]
 
-for i in range(get):
-    numlong = int(input())
-    numbers = list(map(int,input().split()))
-    tempsum=0
+# for i in range(get):
+#     numlong = int(input())
+#     numbers = list(map(int,input().split()))
+#     tempsum=0
 
-    best = max(numbers)
-    # where = numbers.index(best)
-    for i in range(numlong):
-        if numbers[i] < best:
-            tempsum+=best-numbers[i]
-        else:
-            if numbers[numbers.index(best)] == numbers[-1]:
-                pass
-            else:
-                best = max(numbers[numbers.index(best)+1:])
-    result.append(tempsum)
+#     best = max(numbers)
+#     # where = numbers.index(best)
+#     for i in range(numlong):
+#         if numbers[i] < best:
+#             tempsum+=best-numbers[i]
+#         else:
+#             if numbers[numbers.index(best)] == numbers[-1]:
+#                 pass
+#             else:
+#                 best = max(numbers[numbers.index(best)+1:])
+#     result.append(tempsum)
 
-cnt=1
-for i in result:
-    print(f'#{cnt} {i}')
-    cnt+=1
+# cnt=1
+# for i in result:
+#     print(f'#{cnt} {i}')
+#     cnt+=1
 
 #1트 max를 for 문안에 넣으면 용량은 192메가지만 30초를 초과함
 #2트 max를 밖으로 빼고 index를 활용하면 1초면 되지만 265메가로 용량초과
@@ -73,3 +73,34 @@ for i in result:
 # for i in result:
 #     print(f'#{cnt} {i}')
 #     cnt+=1
+
+
+
+
+numbers = int(input())
+result=[]
+
+def rich(values):
+    best=max(values)
+    
+    for value in values:
+        if value < best:
+            temp.append(best-value)
+        elif values.index(value) == len(values)-1:
+            pass
+        elif value == best:
+            best=max(values[values.index(value)+1:])
+
+for number in range(numbers):
+    temp=[0]
+    gets = int(input())
+    values = list(map(int,input().split()))
+    rich(values)
+    # print(temp)
+    result.append(sum(temp))
+
+#출력
+cnt=1
+for res in result:
+    print(f"#{cnt} {res}")
+    cnt+=1
