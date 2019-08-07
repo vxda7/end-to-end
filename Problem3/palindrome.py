@@ -13,7 +13,7 @@ def rot90(words):
         for char in word:
             result[cnt].insert(0,char)
             cnt+=1
-
+    print(result)
     return result
 
 #글자가 몇개 있는지 확인
@@ -31,7 +31,7 @@ def check(words, n):
     return cnt
 
 result=[]
-for tens in range(10):
+for tens in range(1):
     number = int(input())
     case=[]
     for i in range(8):
