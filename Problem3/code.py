@@ -3,38 +3,38 @@ for i in range(10):
     numbers = int(input())
     originals = list(map(int,input().split()))
     manys = int(input())
-    cmds = list(map(int,input().split()))
-
+    cmds = list(input().split())
     # temp=originals[:]
-    for many in range(manys):
+
+    for many in range(len(cmds)):
         if cmds[many] == 'I':
-            x = cmds[many+1]
-            y = cmds[many+2]
+            x = int(cmds[many+1])
+            y = int(cmds[many+2])
             s = cmds[many+3: many+3+y]
-            originals[x:x+y]=s  #리스트채로 수정
+            # print(x+1, y, s)
+            for i in s[::-1]:
+                originals.insert(x,i)
 
         elif cmds[many] == 'D':
-            x = cmds[many+1]
-            y = cmds[many+2]
-            del originals[x:x+y]
+            x = int(cmds[many+1])
+            y = int(cmds[many+2])
+            del originals[x:x+y+1]
 
         elif cmds[many] == 'A':
-            y = cmds[many+1]
+            y = int(cmds[many+1])
             s = cmds[many+2: many+2+y]
+            
+            for i in s:
+                originals.append(s)
 
     result.append(originals[0:10])
 
 #출력
 cnt=1
 for res in result:
-    print(f"{cnt}",end=" ")
+    print(f"#{cnt}",end=" ")
     for r in res:
         print(f"{r}",end=" ")
     print("")
     cnt+=1
 
-
-
-# a = [1,2,3,4,5,6,7,8,9]
-# a[0:2] = [0,0]
-# print(a)
