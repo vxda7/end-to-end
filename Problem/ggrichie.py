@@ -44,5 +44,5 @@ for number in range(numbers):
 
 cnt=1
 for res in result:
-    print(f"#{cnt} {res}")
+    print("#{} {}".format(cnt, res))
     cnt+=1
