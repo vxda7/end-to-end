@@ -19,3 +19,4 @@ for case in range(1, test_case + 1):
             if A[i] <= C[j] <= B[i]:
                 cnt += 1
         print("{}".format(cnt),end=" ")
+    print()
