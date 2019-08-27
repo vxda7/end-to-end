@@ -7,9 +7,10 @@ for tc in range(1, t+1):
     while True:
         if cnt == len(get):
             break
+        if clap < cnt:
+            employee += cnt - clap
+            clap += cnt - clap
         clap += int(get[cnt])
-        if clap < cnt+1:
-            employee += cnt - clap + 1
         cnt += 1
     print(f"#{tc} {employee}")
 
